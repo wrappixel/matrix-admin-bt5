@@ -318,3 +318,21 @@ label {
         margin-left:15px;
     }
  }
+
+/*******************/
+//login-register page
+/*******************/
+.auth-wrapper {
+    min-height: 100vh;
+    position: relative;
+    .auth-box {
+        background: $white;
+        padding: 20px;
+        max-width: 400px;
+        width: 90%;
+        margin: 10% 0;
+    }
+    #recoverform{
+        display: none;
+    }
+}
