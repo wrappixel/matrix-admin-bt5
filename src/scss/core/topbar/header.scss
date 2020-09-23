@@ -72,7 +72,7 @@
         display: none;
         left: 0px;
         .form-control {
-            padding: 23px 40px 20px 23px;
+            padding: 32px;
             @extend %square;
             transition: $transitions;
             &:focus {
