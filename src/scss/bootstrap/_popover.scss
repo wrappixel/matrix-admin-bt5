@@ -1,7 +1,7 @@
 .popover {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0 #{"/* rtl:ignore */"};
   z-index: $zindex-popover;
   display: block;
   max-width: $popover-max-width;
@@ -17,7 +17,7 @@
   @include border-radius($popover-border-radius);
   @include box-shadow($popover-box-shadow);
 
-  .arrow {
+  .popover-arrow {
     position: absolute;
     display: block;
     width: $popover-arrow-width;
@@ -36,9 +36,10 @@
 }
 
 .bs-popover-top {
-  margin-bottom: $popover-arrow-height;
+  // Overrule margin set by popper.js
+  margin-bottom: $popover-arrow-height !important; // stylelint-disable-line declaration-no-important
 
-  > .arrow {
+  > .popover-arrow {
     bottom: subtract(-$popover-arrow-height, $popover-border-width);
 
     &::before {
@@ -55,10 +56,11 @@
   }
 }
 
-.bs-popover-right {
-  margin-left: $popover-arrow-height;
+.bs-popover-end {
+  // Overrule margin set by popper.js
+  margin-left: $popover-arrow-height !important; // stylelint-disable-line declaration-no-important
 
-  > .arrow {
+  > .popover-arrow {
     left: subtract(-$popover-arrow-height, $popover-border-width);
     width: $popover-arrow-height;
     height: $popover-arrow-width;
@@ -79,9 +81,10 @@
 }
 
 .bs-popover-bottom {
-  margin-top: $popover-arrow-height;
+  // Overrule margin set by popper.js
+  margin-top: $popover-arrow-height !important; // stylelint-disable-line declaration-no-important
 
-  > .arrow {
+  > .popover-arrow {
     top: subtract(-$popover-arrow-height, $popover-border-width);
 
     &::before {
@@ -110,10 +113,11 @@
   }
 }
 
-.bs-popover-left {
-  margin-right: $popover-arrow-height;
+.bs-popover-start {
+  // Overrule margin set by popper.js
+  margin-right: $popover-arrow-height !important; // stylelint-disable-line declaration-no-important
 
-  > .arrow {
+  > .popover-arrow {
     right: subtract(-$popover-arrow-height, $popover-border-width);
     width: $popover-arrow-height;
     height: $popover-arrow-width;
@@ -134,20 +138,19 @@
 }
 
 .bs-popover-auto {
-  &[x-placement^="top"] {
+  &[data-popper-placement^="top"] {
     @extend .bs-popover-top;
   }
-  &[x-placement^="right"] {
-    @extend .bs-popover-right;
+  &[data-popper-placement^="right"] {
+    @extend .bs-popover-end;
   }
-  &[x-placement^="bottom"] {
+  &[data-popper-placement^="bottom"] {
     @extend .bs-popover-bottom;
   }
-  &[x-placement^="left"] {
-    @extend .bs-popover-left;
+  &[data-popper-placement^="left"] {
+    @extend .bs-popover-start;
   }
 }
-
 
 // Offset the popover to account for the popover arrow
 .popover-header {
@@ -156,7 +159,7 @@
   @include font-size($font-size-base);
   color: $popover-header-color;
   background-color: $popover-header-bg;
-  border-bottom: $popover-border-width solid darken($popover-header-bg, 5%);
+  border-bottom: $popover-border-width solid shade-color($popover-header-bg, 10%);
   @include border-top-radius($popover-inner-border-radius);
 
   &:empty {

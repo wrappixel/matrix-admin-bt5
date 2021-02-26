@@ -432,3 +432,107 @@ Labels
 .label-default {
     background-color: $gray-100;
 }
+
+
+// 
+// 5-feb-2021
+// 
+
+.card-body {
+    padding: 1.25rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    background-color: #fff;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #a1aab2;
+}
+.form-check-input[type=checkbox] {
+    border-radius: 0;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-weight: 600 !important;
+}
+
+.table thead th {
+    color: $body-color;
+    font-weight: 700;
+}
+
+.table td, .table th{
+    padding: 1rem;
+}
+
+.card-subtitle {
+    margin-top: -0.375rem; 
+}
+
+.table>:not(:last-child)>:last-child>* {
+    border-bottom-color: rgb(233, 236, 239);
+}
+
+small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.error-box .error-body .error-title {
+    font-size: 210px !important;
+    font-weight: 900 !important;
+    line-height: 210px !important;
+}
+
+.form-control, .form-select {
+    height: calc(1.5em + 0.75rem + 2px);
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+select.form-select.form-control-line {
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+}
+.card-header {
+    padding: 0.75rem 1.25rem;
+}
+
+.table .thead-light th {
+    color: #4F5467;
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+}
+
+.valid-feedback, .invalid-feedback {
+    font-size: 80%;
+}
+
+.badge {
+    padding: 0.25em 0.4em;
+}
+
+.badge.rounded-pill {
+    padding: 0.20em 0.6em;
+}
+
+.btn-outline-success:hover, .btn-outline-danger:hover {
+    color: #fff;
+}
+
+.alert {
+    padding: 0.75rem 1.25rem;
+}
+

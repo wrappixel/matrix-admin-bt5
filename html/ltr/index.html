@@ -7,7 +7,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, AdminWrap lite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 4 dashboard template">
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
         content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
@@ -39,22 +39,21 @@
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div id="main-wrapper">
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
-                    <!-- This is for the sidebar toggle which is visible on mobile only -->
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                            class="ti-menu ti-close"></i></a>
+                    
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b class="logo-icon p-l-10">
+                        <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="../../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
@@ -82,10 +81,8 @@
                     <!-- ============================================================== -->
                     <!-- Toggle which is visible on mobile only -->
                     <!-- ============================================================== -->
-                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
-                        data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
-                            class="ti-more"></i></a>
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                            class="ti-menu ti-close"></i></a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -94,25 +91,24 @@
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav float-left mr-auto">
-                        <li class="nav-item d-none d-md-block"><a
+                    <ul class="navbar-nav float-start me-auto">
+                        <li class="nav-item d-none d-lg-block"><a
                                 class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
                                 data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
                         <!-- ============================================================== -->
                         <!-- create new -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
                                 <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
                         </li>
                         <!-- ============================================================== -->
                         <!-- Search -->
@@ -128,20 +124,20 @@
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav float-right">
+                    <ul class="navbar-nav float-end">
                         <!-- ============================================================== -->
                         <!-- Comment -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="mdi mdi-bell font-24"></i>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
                         </li>
                         <!-- ============================================================== -->
                         <!-- End Comment -->
@@ -150,12 +146,10 @@
                         <!-- Messages -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
-                                    class="font-24 mdi mdi-comment-processing"></i>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                 <i class="font-24 mdi mdi-comment-processing"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown"
-                                aria-labelledby="2">
+                            <ul class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown" aria-labelledby="2">
                                 <ul class="list-style-none">
                                     <li>
                                         <div class="">
@@ -164,8 +158,8 @@
                                                 <div class="d-flex no-block align-items-center p-10">
                                                     <span class="btn btn-success btn-circle"><i
                                                             class="ti-calendar"></i></span>
-                                                    <div class="m-l-10">
-                                                        <h5 class="m-b-0">Event today</h5>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Event today</h5>
                                                         <span class="mail-desc">Just a reminder that event</span>
                                                     </div>
                                                 </div>
@@ -175,8 +169,8 @@
                                                 <div class="d-flex no-block align-items-center p-10">
                                                     <span class="btn btn-info btn-circle"><i
                                                             class="ti-settings"></i></span>
-                                                    <div class="m-l-10">
-                                                        <h5 class="m-b-0">Settings</h5>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Settings</h5>
                                                         <span class="mail-desc">You can customize this template</span>
                                                     </div>
                                                 </div>
@@ -186,8 +180,8 @@
                                                 <div class="d-flex no-block align-items-center p-10">
                                                     <span class="btn btn-primary btn-circle"><i
                                                             class="ti-user"></i></span>
-                                                    <div class="m-l-10">
-                                                        <h5 class="m-b-0">Pavan kumar</h5>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Pavan kumar</h5>
                                                         <span class="mail-desc">Just see the my admin!</span>
                                                     </div>
                                                 </div>
@@ -197,8 +191,8 @@
                                                 <div class="d-flex no-block align-items-center p-10">
                                                     <span class="btn btn-danger btn-circle"><i
                                                             class="fa fa-link"></i></span>
-                                                    <div class="m-l-10">
-                                                        <h5 class="m-b-0">Luanch Admin</h5>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Luanch Admin</h5>
                                                         <span class="mail-desc">Just see the my new admin!</span>
                                                     </div>
                                                 </div>
@@ -206,7 +200,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
+                            </ul>
                         </li>
                         <!-- ============================================================== -->
                         <!-- End Messages -->
@@ -216,27 +210,26 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle"
-                                    width="31"></a>
-                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user me-1 ms-1"></i>
                                     My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet me-1 ms-1"></i>
                                     My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email me-1 ms-1"></i>
                                     Inbox</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="javascript:void(0)"><i
-                                        class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                                        class="ti-settings me-1 ms-1"></i> Account Setting</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="javascript:void(0)"><i
-                                        class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                                        class="fa fa-power-off me-1 ms-1"></i> Logout</a>
                                 <div class="dropdown-divider"></div>
-                                <div class="p-l-30 p-10"><a href="javascript:void(0)"
-                                        class="btn btn-sm btn-success btn-rounded">View Profile</a></div>
-                            </div>
+                                <div class="ps-4 p-10"><a href="javascript:void(0)"
+                                        class="btn btn-sm btn-success btn-rounded text-white">View Profile</a></div>
+                            </ul>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -256,7 +249,7 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav" class="p-t-30">
+                    <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
@@ -373,7 +366,7 @@
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
                         <h4 class="page-title">Dashboard</h4>
-                        <div class="ml-auto text-right">
+                        <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -512,43 +505,43 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-user m-b-5 font-16"></i>
-                                                    <h5 class="m-b-0 m-t-5">2540</h5>
+                                                    <i class="fa fa-user mb-1 font-16"></i>
+                                                    <h5 class="mb-0 mt-1">2540</h5>
                                                     <small class="font-light">Total Users</small>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-plus m-b-5 font-16"></i>
-                                                    <h5 class="m-b-0 m-t-5">120</h5>
+                                                    <i class="fa fa-plus mb-1 font-16"></i>
+                                                    <h5 class="mb-0 mt-1">120</h5>
                                                     <small class="font-light">New Users</small>
                                                 </div>
                                             </div>
-                                            <div class="col-6 m-t-15">
+                                            <div class="col-6 mt-3">
                                                 <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-cart-plus m-b-5 font-16"></i>
-                                                    <h5 class="m-b-0 m-t-5">656</h5>
+                                                    <i class="fa fa-cart-plus mb-1 font-16"></i>
+                                                    <h5 class="mb-0 mt-1">656</h5>
                                                     <small class="font-light">Total Shop</small>
                                                 </div>
                                             </div>
-                                            <div class="col-6 m-t-15">
+                                            <div class="col-6 mt-3">
                                                 <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-tag m-b-5 font-16"></i>
-                                                    <h5 class="m-b-0 m-t-5">9540</h5>
+                                                    <i class="fa fa-tag mb-1 font-16"></i>
+                                                    <h5 class="mb-0 mt-1">9540</h5>
                                                     <small class="font-light">Total Orders</small>
                                                 </div>
                                             </div>
-                                            <div class="col-6 m-t-15">
+                                            <div class="col-6 mt-3">
                                                 <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-table m-b-5 font-16"></i>
-                                                    <h5 class="m-b-0 m-t-5">100</h5>
+                                                    <i class="fa fa-table mb-1 font-16"></i>
+                                                    <h5 class="mb-0 mt-1">100</h5>
                                                     <small class="font-light">Pending Orders</small>
                                                 </div>
                                             </div>
-                                            <div class="col-6 m-t-15">
+                                            <div class="col-6 mt-3">
                                                 <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-globe m-b-5 font-16"></i>
-                                                    <h5 class="m-b-0 m-t-5">8540</h5>
+                                                    <i class="fa fa-globe mb-1 font-16"></i>
+                                                    <h5 class="mb-0 mt-1">8540</h5>
                                                     <small class="font-light">Online Orders</small>
                                                 </div>
                                             </div>
@@ -575,18 +568,18 @@
                             </div>
                             <div class="comment-widgets scrollable">
                                 <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row m-t-0">
+                                <div class="d-flex flex-row comment-row mt-0">
                                     <div class="p-2"><img src="../../assets/images/users/1.jpg" alt="user" width="50"
                                             class="rounded-circle"></div>
                                     <div class="comment-text w-100">
                                         <h6 class="font-medium">James Anderson</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                        <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing
                                             and type setting industry. </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-right">April 14, 2016</span>
-                                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                            <span class="text-muted float-end">April 14, 2021</span>
+                                            <button type="button" class="btn btn-cyan btn-sm text-white">Edit</button>
+                                            <button type="button" class="btn btn-success btn-sm text-white">Publish</button>
+                                            <button type="button" class="btn btn-danger btn-sm text-white">Delete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -596,13 +589,13 @@
                                             class="rounded-circle"></div>
                                     <div class="comment-text active w-100">
                                         <h6 class="font-medium">Michael Jorden</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                        <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing
                                             and type setting industry. </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-right">May 10, 2016</span>
-                                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                            <span class="text-muted float-end">May 10, 2021</span>
+                                            <button type="button" class="btn btn-cyan btn-sm text-white">Edit</button>
+                                            <button type="button" class="btn btn-success btn-sm text-white">Publish</button>
+                                            <button type="button" class="btn btn-danger btn-sm text-white">Delete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -612,13 +605,13 @@
                                             class="rounded-circle"></div>
                                     <div class="comment-text w-100">
                                         <h6 class="font-medium">Johnathan Doeting</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                        <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing
                                             and type setting industry. </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-right">August 1, 2016</span>
-                                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                            <span class="text-muted float-end">August 1, 2021</span>
+                                            <button type="button" class="btn btn-cyan btn-sm text-white">Edit</button>
+                                            <button type="button" class="btn btn-success btn-sm text-white">Publish</button>
+                                            <button type="button" class="btn btn-danger btn-sm text-white">Delete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -629,14 +622,14 @@
                             <div class="card-body">
                                 <h4 class="card-title">To Do List</h4>
                                 <div class="todo-widget scrollable" style="height:450px;">
-                                    <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
+                                    <ul class="list-task todo-list list-group mb-0" data-role="tasklist">
                                         <li class="list-group-item todo-item" data-role="task">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label todo-label" for="customCheck">
-                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="customCheck">
+                                                <label class="form-check-label w-100 mb-0 todo-label" for="customCheck">
+                                                    <span class="todo-desc fw-normal">Lorem Ipsum is simply dummy text of the
                                                         printing and typesetting industry.</span> <span
-                                                        class="badge badge-pill badge-danger float-right">Today</span>
+                                                        class="badge rounded-pill bg-danger float-end">Today</span>
                                                 </label>
                                             </div>
                                             <ul class="list-style-none assignedto">
@@ -659,23 +652,23 @@
                                             </ul>
                                         </li>
                                         <li class="list-group-item todo-item" data-role="task">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                <label class="custom-control-label todo-label" for="customCheck1">
-                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                <label class="form-check-label w-100 mb-0 todo-label" for="customCheck1">
+                                                    <span class="todo-desc fw-normal">Lorem Ipsum is simply dummy text of the
                                                         printing</span><span
-                                                        class="badge badge-pill badge-primary float-right">1 week
+                                                        class="badge rounded-pill bg-primary float-end">1 week
                                                     </span>
                                                 </label>
                                             </div>
-                                            <div class="item-date"> 26 jun 2017</div>
+                                            <div class="item-date"> 26 jun 2021</div>
                                         </li>
                                         <li class="list-group-item todo-item" data-role="task">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                <label class="custom-control-label todo-label" for="customCheck2">
-                                                    <span class="todo-desc">Give Purchase report to</span> <span
-                                                        class="badge badge-pill badge-info float-right">Yesterday</span>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="customCheck2">
+                                                <label class="form-check-label w-100 mb-0 todo-label" for="customCheck2">
+                                                    <span class="todo-desc fw-normal">Give Purchase report to</span> <span
+                                                        class="badge rounded-pill bg-info float-end">Yesterday</span>
                                                 </label>
                                             </div>
                                             <ul class="list-style-none assignedto">
@@ -690,23 +683,23 @@
                                             </ul>
                                         </li>
                                         <li class="list-group-item todo-item" data-role="task">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                                <label class="custom-control-label todo-label" for="customCheck3">
-                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="customCheck3">
+                                                <label class="form-check-label w-100 mb-0 todo-label" for="customCheck3">
+                                                    <span class="todo-desc fw-normal">Lorem Ipsum is simply dummy text of the
                                                         printing </span> <span
-                                                        class="badge badge-pill badge-warning float-right">2
+                                                        class="badge rounded-pill bg-warning float-end">2
                                                         weeks</span>
                                                 </label>
                                             </div>
-                                            <div class="item-date"> 26 jun 2017</div>
+                                            <div class="item-date"> 26 jun 2021</div>
                                         </li>
                                         <li class="list-group-item todo-item" data-role="task">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                                <label class="custom-control-label todo-label" for="customCheck4">
-                                                    <span class="todo-desc">Give Purchase report to</span> <span
-                                                        class="badge badge-pill badge-info float-right">Yesterday</span>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="customCheck4">
+                                                <label class="form-check-label w-100 mb-0 todo-label" for="customCheck4">
+                                                    <span class="todo-desc fw-normal">Give Purchase report to</span> <span
+                                                        class="badge rounded-pill bg-info float-end">Yesterday</span>
                                                 </label>
                                             </div>
                                             <ul class="list-style-none assignedto">
@@ -727,11 +720,11 @@
                         <!-- card -->
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title m-b-0">Progress Box</h4>
-                                <div class="m-t-20">
+                                <h4 class="card-title mb-0">Progress Box</h4>
+                                <div class="mt-3">
                                     <div class="d-flex no-block align-items-center">
                                         <span>81% Clicks</span>
-                                        <div class="ml-auto">
+                                        <div class="ms-auto">
                                             <span>125</span>
                                         </div>
                                     </div>
@@ -742,9 +735,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="d-flex no-block align-items-center m-t-25">
+                                    <div class="d-flex no-block align-items-center mt-4">
                                         <span>72% Uniquie Clicks</span>
-                                        <div class="ml-auto">
+                                        <div class="ms-auto">
                                             <span>120</span>
                                         </div>
                                     </div>
@@ -755,9 +748,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="d-flex no-block align-items-center m-t-25">
+                                    <div class="d-flex no-block align-items-center mt-4">
                                         <span>53% Impressions</span>
-                                        <div class="ml-auto">
+                                        <div class="ms-auto">
                                             <span>785</span>
                                         </div>
                                     </div>
@@ -768,9 +761,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="d-flex no-block align-items-center m-t-25">
+                                    <div class="d-flex no-block align-items-center mt-4">
                                         <span>3% Online Users</span>
-                                        <div class="ml-auto">
+                                        <div class="ms-auto">
                                             <span>8</span>
                                         </div>
                                     </div>
@@ -785,74 +778,74 @@
                         <!-- card new -->
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title m-b-0">News Updates</h4>
+                                <h4 class="card-title mb-0">News Updates</h4>
                             </div>
                             <ul class="list-style-none">
                                 <li class="d-flex no-block card-body">
-                                    <i class="fa fa-check-circle w-30px m-t-5"></i>
+                                    <i class="fa fa-check-circle w-30px mt-1"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Lorem ipsum dolor sit amet,
+                                        <a href="#" class="mb-0 font-medium p-0">Lorem ipsum dolor sit amet,
                                             consectetur adipiscing elit.</a>
                                         <span class="text-muted">dolor sit amet, consectetur adipiscing</span>
                                     </div>
-                                    <div class="ml-auto">
+                                    <div class="ms-auto">
                                         <div class="tetx-right">
-                                            <h5 class="text-muted m-b-0">20</h5>
+                                            <h5 class="text-muted mb-0">20</h5>
                                             <span class="text-muted font-16">Jan</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="d-flex no-block card-body border-top">
-                                    <i class="fa fa-gift w-30px m-t-5"></i>
+                                    <i class="fa fa-gift w-30px mt-1"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Congratulation Maruti, Happy
+                                        <a href="#" class="mb-0 font-medium p-0">Congratulation Maruti, Happy
                                             Birthday</a>
                                         <span class="text-muted">many many happy returns of the day</span>
                                     </div>
-                                    <div class="ml-auto">
+                                    <div class="ms-auto">
                                         <div class="tetx-right">
-                                            <h5 class="text-muted m-b-0">11</h5>
+                                            <h5 class="text-muted mb-0">11</h5>
                                             <span class="text-muted font-16">Jan</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="d-flex no-block card-body border-top">
-                                    <i class="fa fa-plus w-30px m-t-5"></i>
+                                    <i class="fa fa-plus w-30px mt-1"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Maruti is a Responsive Admin theme</a>
+                                        <a href="#" class="mb-0 font-medium p-0">Maruti is a Responsive Admin theme</a>
                                         <span class="text-muted">But already everything was solved. It will ...</span>
                                     </div>
-                                    <div class="ml-auto">
+                                    <div class="ms-auto">
                                         <div class="tetx-right">
-                                            <h5 class="text-muted m-b-0">19</h5>
+                                            <h5 class="text-muted mb-0">19</h5>
                                             <span class="text-muted font-16">Jan</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="d-flex no-block card-body border-top">
-                                    <i class="fa fa-leaf w-30px m-t-5"></i>
+                                    <i class="fa fa-leaf w-30px mt-1"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Envato approved Maruti Admin
+                                        <a href="#" class="mb-0 font-medium p-0">Envato approved Maruti Admin
                                             template</a>
                                         <span class="text-muted">i am very happy to approved by TF</span>
                                     </div>
-                                    <div class="ml-auto">
+                                    <div class="ms-auto">
                                         <div class="tetx-right">
-                                            <h5 class="text-muted m-b-0">20</h5>
+                                            <h5 class="text-muted mb-0">20</h5>
                                             <span class="text-muted font-16">Jan</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="d-flex no-block card-body border-top">
-                                    <i class="fa fa-question-circle w-30px m-t-5"></i>
+                                    <i class="fa fa-question-circle w-30px mt-1"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0"> I am alwayse here if you have any
+                                        <a href="#" class="mb-0 font-medium p-0"> I am alwayse here if you have any
                                             question</a>
                                         <span class="text-muted">we glad that you choose our template</span>
                                     </div>
-                                    <div class="ml-auto">
+                                    <div class="ms-auto">
                                         <div class="tetx-right">
-                                            <h5 class="text-muted m-b-0">15</h5>
+                                            <h5 class="text-muted mb-0">15</h5>
                                             <span class="text-muted font-16">Jan</span>
                                         </div>
                                     </div>
@@ -924,13 +917,13 @@
                             <div class="card-body border-top">
                                 <div class="row">
                                     <div class="col-9">
-                                        <div class="input-field m-t-0 m-b-0">
+                                        <div class="input-field mt-0 mb-0">
                                             <textarea id="textarea1" placeholder="Type and enter"
                                                 class="form-control border-0"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-3">
-                                        <a class="btn-circle btn-lg btn-cyan float-right text-white"
+                                        <a class="btn-circle btn-lg btn-cyan float-end text-white"
                                             href="javascript:void(0)"><i class="fas fa-paper-plane"></i></a>
                                     </div>
                                 </div>
@@ -943,18 +936,18 @@
                             </div>
                             <div class="comment-widgets scrollable" style="max-height: 130px;">
                                 <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row m-t-0">
+                                <div class="d-flex flex-row comment-row mt-0">
                                     <div class="p-2"><img src="../../assets/images/users/1.jpg" alt="user" width="50"
                                             class="rounded-circle"></div>
                                     <div class="comment-text w-100">
                                         <h6 class="font-medium">James Anderson</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                        <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing
                                             and type setting industry. </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-right">April 14, 2016</span>
-                                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                            <span class="text-muted float-end">April 14, 2021</span>
+                                            <button type="button" class="btn btn-cyan btn-sm text-white">Edit</button>
+                                            <button type="button" class="btn btn-success btn-sm text-white">Publish</button>
+                                            <button type="button" class="btn btn-danger btn-sm text-white">Delete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -964,13 +957,13 @@
                                             class="rounded-circle"></div>
                                     <div class="comment-text active w-100">
                                         <h6 class="font-medium">Michael Jorden</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                        <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing
                                             and type setting industry. </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-right">May 10, 2016</span>
-                                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                            <span class="text-muted float-end">May 10, 2021</span>
+                                            <button type="button" class="btn btn-cyan btn-sm text-white">Edit</button>
+                                            <button type="button" class="btn btn-success btn-sm text-white">Publish</button>
+                                            <button type="button" class="btn btn-danger btn-sm text-white">Delete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -980,13 +973,13 @@
                                             class="rounded-circle"></div>
                                     <div class="comment-text w-100">
                                         <h6 class="font-medium">Johnathan Doeting</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                        <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing
                                             and type setting industry. </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-right">August 1, 2016</span>
-                                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                            <span class="text-muted float-end">August 1, 2021</span>
+                                            <button type="button" class="btn btn-cyan btn-sm text-white">Edit</button>
+                                            <button type="button" class="btn btn-success btn-sm text-white">Publish</button>
+                                            <button type="button" class="btn btn-danger btn-sm text-white">Delete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -994,12 +987,12 @@
                         </div>
                         <!-- accoridan part -->
                         <div class="accordion" id="accordionExample">
-                            <div class="card m-b-0">
+                            <div class="card mb-0">
                                 <div class="card-header" id="headingOne">
                                     <h5 class="mb-0">
                                         <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                             aria-controls="collapseOne">
-                                            <i class="m-r-5 fa fa-magnet" aria-hidden="true"></i>
+                                            <i class="me-1 fa fa-magnet" aria-hidden="true"></i>
                                             <span>Accordion Example 1</span>
                                         </a>
                                     </h5>
@@ -1018,12 +1011,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card m-b-0 border-top">
+                            <div class="card mb-0 border-top">
                                 <div class="card-header" id="headingTwo">
                                     <h5 class="mb-0">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo"
                                             aria-expanded="false" aria-controls="collapseTwo">
-                                            <i class="m-r-5 fa fa-magnet" aria-hidden="true"></i>
+                                            <i class="me-1 fa fa-magnet" aria-hidden="true"></i>
                                             <span>Accordion Example 2</span>
                                         </a>
                                     </h5>
@@ -1042,12 +1035,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card m-b-0 border-top">
+                            <div class="card mb-0 border-top">
                                 <div class="card-header" id="headingThree">
                                     <h5 class="mb-0">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapseThree"
                                             aria-expanded="false" aria-controls="collapseThree">
-                                            <i class="m-r-5 fa fa-magnet" aria-hidden="true"></i>
+                                            <i class="me-1 fa fa-magnet" aria-hidden="true"></i>
                                             <span>Accordion Example 3</span>
                                         </a>
                                     </h5>
@@ -1069,7 +1062,7 @@
                         </div>
                         <!-- toggle part -->
                         <div id="accordian-4">
-                            <div class="card m-t-30">
+                            <div class="card mt-4">
                                 <a class="card-header link" data-toggle="collapse" data-parent="#accordian-4"
                                     href="#Toggle-1" aria-expanded="true" aria-controls="Toggle-1">
                                     <i class="seticon fa fa-arrow-right" aria-hidden="true"></i>
@@ -1108,13 +1101,13 @@
                         <div class="card">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home"
+                                <li class="nav-item"> <a class="nav-link active" data-bs-toggle="tab" href="#home"
                                         role="tab"><span class="hidden-sm-up"></span> <span
                                             class="hidden-xs-down">Tab1</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile"
+                                <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#profile"
                                         role="tab"><span class="hidden-sm-up"></span> <span
                                             class="hidden-xs-down">Tab2</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages"
+                                <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#messages"
                                         role="tab"><span class="hidden-sm-up"></span> <span
                                             class="hidden-xs-down">Tab3</span></a> </li>
                             </ul>
@@ -1132,7 +1125,7 @@
                                 <div class="tab-pane  p-20" id="profile" role="tabpanel">
                                     <div class="p-20">
                                         <img src="../../assets/images/background/img4.jpg" class="img-fluid">
-                                        <p class="m-t-10">And is full of waffle to It has multiple paragraphs and is
+                                        <p class="mt-2">And is full of waffle to It has multiple paragraphs and is
                                             full of waffle to pad out the comment. Usually, you just wish these sorts of
                                             comments would come to an end.multiple paragraphs and is full of waffle to
                                             pad out the comment..</p>
@@ -1181,8 +1174,7 @@
     <!-- ============================================================== -->
     <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
     <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->

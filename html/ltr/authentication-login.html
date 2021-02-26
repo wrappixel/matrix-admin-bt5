@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, AdminWrap lite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 4 dashboard template">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description" content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
     <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
@@ -42,22 +42,22 @@
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
             <div class="auth-box bg-dark border-top border-secondary">
                 <div id="loginform">
-                    <div class="text-center p-t-20 p-b-20">
+                    <div class="text-center pt-3 pb-3">
                         <span class="db"><img src="../../assets/images/logo.png" alt="logo" /></span>
                     </div>
                     <!-- Form -->
-                    <form class="form-horizontal m-t-20" id="loginform" action="index.html">
-                        <div class="row p-b-30">
+                    <form class="form-horizontal mt-3" id="loginform" action="index.html">
+                        <div class="row pb-4">
                             <div class="col-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
+                                        <span class="input-group-text bg-success text-white h-100" id="basic-addon1"><i class="ti-user"></i></span>
                                     </div>
                                     <input type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required="">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                        <span class="input-group-text bg-warning text-white h-100" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
                                     <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required="">
                                 </div>
@@ -66,9 +66,9 @@
                         <div class="row border-top border-secondary">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <div class="p-t-20">
-                                        <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock m-r-5"></i> Lost password?</button>
-                                        <button class="btn btn-success float-right" type="submit">Login</button>
+                                    <div class="pt-3">
+                                        <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock me-1"></i> Lost password?</button>
+                                        <button class="btn btn-success float-end text-white" type="submit">Login</button>
                                     </div>
                                 </div>
                             </div>
@@ -79,21 +79,21 @@
                     <div class="text-center">
                         <span class="text-white">Enter your e-mail address below and we will send you instructions how to recover a password.</span>
                     </div>
-                    <div class="row m-t-20">
+                    <div class="row mt-3">
                         <!-- Form -->
                         <form class="col-12" action="index.html">
                             <!-- email -->
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
+                                    <span class="input-group-text bg-danger text-white h-100" id="basic-addon1"><i class="ti-email"></i></span>
                                 </div>
                                 <input type="text" class="form-control form-control-lg" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                             <!-- pwd -->
-                            <div class="row m-t-20 p-t-20 border-top border-secondary">
+                            <div class="row mt-3 pt-3 border-top border-secondary">
                                 <div class="col-12">
-                                    <a class="btn btn-success" href="#" id="to-login" name="action">Back To Login</a>
-                                    <button class="btn btn-info float-right" type="button" name="action">Recover</button>
+                                    <a class="btn btn-success text-white" href="#" id="to-login" name="action">Back To Login</a>
+                                    <button class="btn btn-info float-end" type="button" name="action">Recover</button>
                                 </div>
                             </div>
                         </form>
@@ -122,14 +122,12 @@
     <!-- ============================================================== -->
     <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
     <script>
 
-    $('[data-toggle="tooltip"]').tooltip();
     $(".preloader").fadeOut();
     // ============================================================== 
     // Login and Recover Password 

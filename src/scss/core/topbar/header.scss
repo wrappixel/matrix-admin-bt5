@@ -22,9 +22,9 @@
             display: none;
         }
         .navbar-header {
-            width:250px;
             line-height: $topbar-navlink-height;
             .navbar-brand {
+                width: 250px;
                 display: flex;
                 align-items: center;
                 margin: 0px;
