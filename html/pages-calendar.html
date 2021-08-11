@@ -20,10 +20,18 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../../assets/images/favicon.png"
+      href="../assets/images/favicon.png"
     />
     <!-- Custom CSS -->
-    <link href="../../dist/css/style.min.css" rel="stylesheet" />
+    <link
+      href="../assets/libs/fullcalendar/dist/fullcalendar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/extra-libs/calendar/calendar.css"
+      rel="stylesheet"
+    />
+    <link href="../dist/css/style.min.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -69,7 +77,7 @@
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                 <!-- Dark Logo icon -->
                 <img
-                  src="../../assets/images/logo-icon.png"
+                  src="../assets/images/logo-icon.png"
                   alt="homepage"
                   class="light-logo"
                 />
@@ -79,7 +87,7 @@
               <span class="logo-text">
                 <!-- dark Logo text -->
                 <img
-                  src="../../assets/images/logo-text.png"
+                  src="../assets/images/logo-text.png"
                   alt="homepage"
                   class="light-logo"
                 />
@@ -88,7 +96,7 @@
               <!-- <b class="logo-icon"> -->
               <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
               <!-- Dark Logo icon -->
-              <!-- <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+              <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
 
               <!-- </b> -->
               <!--End Logo icon -->
@@ -312,7 +320,7 @@
                   aria-expanded="false"
                 >
                   <img
-                    src="../../assets/images/users/1.jpg"
+                    src="../assets/images/users/1.jpg"
                     alt="user"
                     class="rounded-circle"
                     width="31"
@@ -610,7 +618,7 @@
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Invoice</h4>
+              <h4 class="page-title">Calendar</h4>
               <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
@@ -636,119 +644,199 @@
           <!-- ============================================================== -->
           <div class="row">
             <div class="col-md-12">
-              <div class="card card-body printableArea">
-                <h3><b>INVOICE</b> <span class="pull-right">#5669626</span></h3>
-                <hr />
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="pull-left">
-                      <address>
-                        <h3>
-                          &nbsp;<b class="text-danger">Material Pro Admin</b>
-                        </h3>
-                        <p class="text-muted ms-1">
-                          E 104, Dharti-2, <br />
-                          Nr' Viswakarma Temple, <br />
-                          Talaja Road, <br />
-                          Bhavnagar - 364002
-                        </p>
-                      </address>
+              <div class="card">
+                <div class="">
+                  <div class="row">
+                    <div class="col-lg-3 border-right pe-0">
+                      <div class="card-body border-bottom">
+                        <h4 class="card-title mt-2">Drag & Drop Event</h4>
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div id="calendar-events" class="">
+                              <div
+                                class="calendar-events mb-3"
+                                data-class="bg-info"
+                              >
+                                <i class="fa fa-circle text-info me-2"></i>Event
+                                One
+                              </div>
+                              <div
+                                class="calendar-events mb-3"
+                                data-class="bg-success"
+                              >
+                                <i class="fa fa-circle text-success me-2"></i>
+                                Event Two
+                              </div>
+                              <div
+                                class="calendar-events mb-3"
+                                data-class="bg-danger"
+                              >
+                                <i class="fa fa-circle text-danger me-2"></i
+                                >Event Three
+                              </div>
+                              <div
+                                class="calendar-events mb-3"
+                                data-class="bg-warning"
+                              >
+                                <i class="fa fa-circle text-warning me-2"></i
+                                >Event Four
+                              </div>
+                            </div>
+                            <!-- checkbox -->
+                            <div class="form-check">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="drop-remove"
+                              />
+                              <label class="cform-check-label" for="drop-remove"
+                                >Remove after drop</label
+                              >
+                            </div>
+                            <a
+                              href="javascript:void(0)"
+                              data-toggle="modal"
+                              data-target="#add-new-event"
+                              class="
+                                btn
+                                mt-3
+                                btn-info
+                                d-block
+                                waves-effect waves-light
+                              "
+                            >
+                              <i class="ti-plus"></i> Add New Event
+                            </a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="pull-right text-end">
-                      <address>
-                        <h3>To,</h3>
-                        <h4 class="font-bold">Gaala & Sons,</h4>
-                        <p class="text-muted ms-4">
-                          E 104, Dharti-2, <br />
-                          Nr' Viswakarma Temple, <br />
-                          Talaja Road, <br />
-                          Bhavnagar - 364002
-                        </p>
-                        <p class="mt-4">
-                          <b>Invoice Date :</b>
-                          <i class="fa fa-calendar"></i> 23rd Jan 2018
-                        </p>
-                        <p>
-                          <b>Due Date :</b> <i class="fa fa-calendar"></i> 25th
-                          Jan 2018
-                        </p>
-                      </address>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="table-responsive mt-5" style="clear: both">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th class="text-center">#</th>
-                            <th>Description</th>
-                            <th class="text-end">Quantity</th>
-                            <th class="text-end">Unit Cost</th>
-                            <th class="text-end">Total</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="text-center">1</td>
-                            <td>Milk Powder</td>
-                            <td class="text-end">2</td>
-                            <td class="text-end">$24</td>
-                            <td class="text-end">$48</td>
-                          </tr>
-                          <tr>
-                            <td class="text-center">2</td>
-                            <td>Air Conditioner</td>
-                            <td class="text-end">3</td>
-                            <td class="text-end">$500</td>
-                            <td class="text-end">$1500</td>
-                          </tr>
-                          <tr>
-                            <td class="text-center">3</td>
-                            <td>RC Cars</td>
-                            <td class="text-end">20</td>
-                            <td class="text-end">%600</td>
-                            <td class="text-end">$12000</td>
-                          </tr>
-                          <tr>
-                            <td class="text-center">4</td>
-                            <td>Down Coat</td>
-                            <td class="text-end">60</td>
-                            <td class="text-end">$5</td>
-                            <td class="text-end">$300</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="pull-right mt-4 text-end">
-                      <p>Sub - Total amount: $13,848</p>
-                      <p>vat (10%) : $138</p>
-                      <hr />
-                      <h3><b>Total :</b> $13,986</h3>
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr />
-                    <div class="text-end">
-                      <button class="btn btn-danger text-white" type="submit">
-                        Proceed to payment
-                      </button>
+                    <div class="col-lg-9">
+                      <div class="card-body b-l calender-sidebar">
+                        <div id="calendar"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
+          <!-- BEGIN MODAL -->
+          <div class="modal none-border" id="my-event">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title"><strong>Add Event</strong></h4>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                  >
+                    &times;
+                  </button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary waves-effect"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success save-event waves-effect waves-light"
+                  >
+                    Create event
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger delete-event waves-effect waves-light"
+                    data-dismiss="modal"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Add Category -->
+          <div class="modal fade none-border" id="add-new-event">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title"><strong>Add</strong> a category</h4>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                  >
+                    &times;
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label class="control-label">Category Name</label>
+                        <input
+                          class="form-control form-white"
+                          placeholder="Enter name"
+                          type="text"
+                          name="category-name"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="control-label"
+                          >Choose Category Color</label
+                        >
+                        <select
+                          class="form-select shadow-none form-white"
+                          data-placeholder="Choose a color..."
+                          name="category-color"
+                        >
+                          <option value="success">Success</option>
+                          <option value="danger">Danger</option>
+                          <option value="info">Info</option>
+                          <option value="primary">Primary</option>
+                          <option value="warning">Warning</option>
+                          <option value="inverse">Inverse</option>
+                        </select>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="
+                      btn btn-danger
+                      waves-effect waves-light
+                      save-category
+                    "
+                    data-dismiss="modal"
+                  >
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary waves-effect"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END MODAL -->
           <!-- ============================================================== -->
           <!-- End PAge Content -->
-          <!-- ============================================================== -->
-          <!-- ============================================================== -->
-          <!-- Right sidebar -->
-          <!-- ============================================================== -->
-          <!-- .right-sidebar -->
-          <!-- ============================================================== -->
-          <!-- End Right sidebar -->
           <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
@@ -775,17 +863,23 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../dist/js/jquery.ui.touch-punch-improved.js"></script>
+    <script src="../dist/js/jquery-ui.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->
-    <script src="../../dist/js/waves.js"></script>
+    <script src="../dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="../../dist/js/sidebarmenu.js"></script>
+    <script src="../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="../../dist/js/custom.min.js"></script>
+    <script src="../dist/js/custom.min.js"></script>
+    <!-- this page js -->
+    <script src="../assets/libs/moment/min/moment.min.js"></script>
+    <script src="../assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="../dist/js/pages/calendar/cal-init.js"></script>
   </body>
 </html>
