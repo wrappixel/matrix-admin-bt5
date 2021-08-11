@@ -9,7 +9,7 @@
   font-variant: normal;
   font-weight: normal;
   line-height: 1;
-  vertical-align: -.125em;
+  vertical-align: -0.125em;
 }
 
 @mixin fa-icon-rotate($degrees, $rotation) {
@@ -21,7 +21,6 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation}, mirror=1)";
   transform: scale($horiz, $vert);
 }
-
 
 // Only display content to screen readers. A la Bootstrap 4.
 //

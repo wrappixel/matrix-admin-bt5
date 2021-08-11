@@ -1,5 +1,5 @@
-import Color from 'jquery-asColor';
-import GradientString from './gradientString';
+import Color from "jquery-asColor";
+import GradientString from "./gradientString";
 
 export default class ColorStop {
   constructor(color, position, gradient) {
@@ -11,7 +11,7 @@ export default class ColorStop {
 
   setPosition(string) {
     const position = GradientString.parsePosition(string);
-    if(this.position !== position){
+    if (this.position !== position) {
       this.position = position;
       this.gradient.reorder();
     }

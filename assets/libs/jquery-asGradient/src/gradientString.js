@@ -1,17 +1,27 @@
-import $ from 'jquery';
-import * as util from './util';
-import keywordAngleMap from './keywordAngleMap';
+import $ from "jquery";
+import * as util from "./util";
+import keywordAngleMap from "./keywordAngleMap";
 
 const angleKeywordMap = util.flip(keywordAngleMap);
 
 const RegExpStrings = (() => {
-  const color = /(?:rgba|rgb|hsla|hsl)\s*\([\s\d\.,%]+\)|#[a-z0-9]{3,6}|[a-z]+/i;
+  const color =
+    /(?:rgba|rgb|hsla|hsl)\s*\([\s\d\.,%]+\)|#[a-z0-9]{3,6}|[a-z]+/i;
   const position = /\d{1,3}%/i;
   const angle = /(?:to ){0,1}(?:(?:top|left|right|bottom)\s*){1,2}|\d+deg/i;
-  const stop = new RegExp(`(${color.source})\\s*(${position.source}){0,1}`, 'i');
-  const stops = new RegExp(stop.source, 'gi');
-  const parameters = new RegExp(`(?:(${angle.source})){0,1}\\s*,{0,1}\\s*(.*?)\\s*`, 'i');
-  const full = new RegExp(`^(-webkit-|-moz-|-ms-|-o-){0,1}(linear|radial|repeating-linear)-gradient\\s*\\(\\s*(${parameters.source})\\s*\\)$`, 'i');
+  const stop = new RegExp(
+    `(${color.source})\\s*(${position.source}){0,1}`,
+    "i"
+  );
+  const stops = new RegExp(stop.source, "gi");
+  const parameters = new RegExp(
+    `(?:(${angle.source})){0,1}\\s*,{0,1}\\s*(.*?)\\s*`,
+    "i"
+  );
+  const full = new RegExp(
+    `^(-webkit-|-moz-|-ms-|-o-){0,1}(linear|radial|repeating-linear)-gradient\\s*\\(\\s*(${parameters.source})\\s*\\)$`,
+    "i"
+  );
 
   return {
     FULL: full,
@@ -20,53 +30,57 @@ const RegExpStrings = (() => {
     POSITION: position,
     STOP: stop,
     STOPS: stops,
-    PARAMETERS: new RegExp(`^${parameters.source}$`, 'i')
+    PARAMETERS: new RegExp(`^${parameters.source}$`, "i"),
   };
 })();
 
 export default {
-  matchString: function(string) {
+  matchString: function (string) {
     const matched = this.parseString(string);
-    if(matched && matched.value && matched.value.stops && matched.value.stops.length > 1){
+    if (
+      matched &&
+      matched.value &&
+      matched.value.stops &&
+      matched.value.stops.length > 1
+    ) {
       return true;
     }
     return false;
   },
 
-  parseString: function(string) {
+  parseString: function (string) {
     string = $.trim(string);
     let matched;
     if ((matched = RegExpStrings.FULL.exec(string)) !== null) {
       let value = this.parseParameters(matched[3]);
 
       return {
-        prefix: (typeof matched[1] === 'undefined') ? null : matched[1],
+        prefix: typeof matched[1] === "undefined" ? null : matched[1],
         type: matched[2],
-        value: value
+        value: value,
       };
     } else {
       return false;
     }
   },
 
-  parseParameters: function(string) {
+  parseParameters: function (string) {
     let matched;
     if ((matched = RegExpStrings.PARAMETERS.exec(string)) !== null) {
       let stops = this.parseStops(matched[2]);
       return {
-        angle: (typeof matched[1] === 'undefined') ? 0 : matched[1],
-        stops: stops
+        angle: typeof matched[1] === "undefined" ? 0 : matched[1],
+        stops: stops,
       };
     } else {
       return false;
     }
   },
 
-  parseStops: function(string) {
+  parseStops: function (string) {
     let matched;
     const result = [];
     if ((matched = string.match(RegExpStrings.STOPS)) !== null) {
-
       $.each(matched, (i, item) => {
         const stop = this.parseStop(item);
         if (stop) {
@@ -79,7 +93,7 @@ export default {
     }
   },
 
-  formatStops: function(stops, cleanPosition) {
+  formatStops: function (stops, cleanPosition) {
     let stop;
     const output = [];
     let positions = [];
@@ -88,7 +102,7 @@ export default {
 
     for (let i = 0; i < stops.length; i++) {
       stop = stops[i];
-      if (typeof stop.position === 'undefined' || stop.position === null) {
+      if (typeof stop.position === "undefined" || stop.position === null) {
         if (i === 0) {
           position = 0;
         } else if (i === stops.length - 1) {
@@ -103,7 +117,7 @@ export default {
       colors.push(stop.color.toString());
     }
 
-    positions = ((data => {
+    positions = ((data) => {
       let start = null;
       let average;
       for (let i = 0; i < data.length; i++) {
@@ -122,61 +136,65 @@ export default {
       }
 
       return data;
-    }))(positions);
+    })(positions);
 
     for (let x = 0; x < stops.length; x++) {
-      if (cleanPosition && ((x === 0 && positions[x] === 0) || (x === stops.length - 1 && positions[x] === 1))) {
-        position = '';
+      if (
+        cleanPosition &&
+        ((x === 0 && positions[x] === 0) ||
+          (x === stops.length - 1 && positions[x] === 1))
+      ) {
+        position = "";
       } else {
         position = ` ${this.formatPosition(positions[x])}`;
       }
 
       output.push(colors[x] + position);
     }
-    return output.join(', ');
+    return output.join(", ");
   },
 
-  parseStop: function(string) {
+  parseStop: function (string) {
     let matched;
     if ((matched = RegExpStrings.STOP.exec(string)) !== null) {
       let position = this.parsePosition(matched[2]);
 
       return {
         color: matched[1],
-        position: position
+        position: position,
       };
     } else {
       return false;
     }
   },
 
-  parsePosition: function(string) {
-    if (typeof string === 'string' && string.substr(-1) === '%') {
+  parsePosition: function (string) {
+    if (typeof string === "string" && string.substr(-1) === "%") {
       string = parseFloat(string.slice(0, -1) / 100);
     }
 
-    if(typeof string !== 'undefined' && string !== null) {
+    if (typeof string !== "undefined" && string !== null) {
       return parseFloat(string, 10);
     } else {
       return null;
     }
   },
 
-  formatPosition: function(value) {
+  formatPosition: function (value) {
     return `${parseInt(value * 100, 10)}%`;
   },
 
-  parseAngle: function(string, notStandard) {
-    if (typeof string === 'string' && string.includes('deg')) {
-      string = string.replace('deg', '');
+  parseAngle: function (string, notStandard) {
+    if (typeof string === "string" && string.includes("deg")) {
+      string = string.replace("deg", "");
     }
     if (!isNaN(string)) {
       if (notStandard) {
         string = this.fixOldAngle(string);
       }
     }
-    if (typeof string === 'string') {
-      const directions = string.split(' ');
+    if (typeof string === "string") {
+      const directions = string.split(" ");
 
       const filtered = [];
       for (const i in directions) {
@@ -184,9 +202,9 @@ export default {
           filtered.push(directions[i].toLowerCase());
         }
       }
-      let keyword = filtered.join(' ');
+      let keyword = filtered.join(" ");
 
-      if (!string.includes('to ')) {
+      if (!string.includes("to ")) {
         keyword = util.reverseDirection(keyword);
       }
       keyword = `to ${keyword}`;
@@ -208,14 +226,14 @@ export default {
     return value;
   },
 
-  fixOldAngle: function(value) {
+  fixOldAngle: function (value) {
     value = parseFloat(value);
     value = Math.abs(450 - value) % 360;
     value = parseFloat(value.toFixed(3));
     return value;
   },
 
-  formatAngle: function(value, notStandard, useKeyword) {
+  formatAngle: function (value, notStandard, useKeyword) {
     value = parseInt(value, 10);
     if (useKeyword && angleKeywordMap.hasOwnProperty(value)) {
       value = angleKeywordMap[value];
@@ -230,5 +248,5 @@ export default {
     }
 
     return value;
-  }
-}
+  },
+};

@@ -5,40 +5,38 @@ Author: Wrappixel
 File: scss
 */
 
-
-
 /*******************
 Table Cell
 *******************/
 
 .table-box {
-    display: table;
-    width: 100%;
+  display: table;
+  width: 100%;
 }
 
 .cell {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .table thead th,
 .table th {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .nowrap {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .lite-padding td {
-    padding: 5px;
+  padding: 5px;
 }
 
 .v-middle {
-    td,
-    th {
-        vertical-align: middle;
-    }
+  td,
+  th {
+    vertical-align: middle;
+  }
 }
 
 /*******************
@@ -47,17 +45,17 @@ Table td vertical middle
 
 .vm.table td,
 .vm.table th {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .no-th-brd.table th {
-    border: 0px;
+  border: 0px;
 }
 
 .table.no-border {
-    tbody {
-        td {
-            border: 0px;
-        }
+  tbody {
+    td {
+      border: 0px;
     }
+  }
 }

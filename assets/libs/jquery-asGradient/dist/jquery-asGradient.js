@@ -1,27 +1,27 @@
 /**
-* jQuery asGradient v0.3.3
-* https://github.com/amazingSurge/jquery-asGradient
-*
-* Copyright (c) amazingSurge
-* Released under the LGPL-3.0 license
-*/
-(function(global, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define('AsGradient', ['exports', 'jquery', 'jquery-asColor'], factory);
-  } else if (typeof exports !== 'undefined') {
-    factory(exports, require('jquery'), require('jquery-asColor'));
+ * jQuery asGradient v0.3.3
+ * https://github.com/amazingSurge/jquery-asGradient
+ *
+ * Copyright (c) amazingSurge
+ * Released under the LGPL-3.0 license
+ */
+(function (global, factory) {
+  if (typeof define === "function" && define.amd) {
+    define("AsGradient", ["exports", "jquery", "jquery-asColor"], factory);
+  } else if (typeof exports !== "undefined") {
+    factory(exports, require("jquery"), require("jquery-asColor"));
   } else {
     var mod = {
-      exports: {}
+      exports: {},
     };
     factory(mod.exports, global.jQuery, global.AsColor);
     global.AsGradient = mod.exports;
   }
-})(this, function(exports, _jquery, _jqueryAsColor) {
-  'use strict';
+})(this, function (exports, _jquery, _jqueryAsColor) {
+  "use strict";
 
-  Object.defineProperty(exports, '__esModule', {
-    value: true
+  Object.defineProperty(exports, "__esModule", {
+    value: true,
   });
 
   var _jquery2 = _interopRequireDefault(_jquery);
@@ -32,42 +32,42 @@
     return obj && obj.__esModule
       ? obj
       : {
-          default: obj
+          default: obj,
         };
   }
 
   var _typeof =
-    typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol'
-      ? function(obj) {
+    typeof Symbol === "function" && typeof Symbol.iterator === "symbol"
+      ? function (obj) {
           return typeof obj;
         }
-      : function(obj) {
+      : function (obj) {
           return obj &&
-          typeof Symbol === 'function' &&
-          obj.constructor === Symbol &&
-          obj !== Symbol.prototype
-            ? 'symbol'
+            typeof Symbol === "function" &&
+            obj.constructor === Symbol &&
+            obj !== Symbol.prototype
+            ? "symbol"
             : typeof obj;
         };
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
-      throw new TypeError('Cannot call a class as a function');
+      throw new TypeError("Cannot call a class as a function");
     }
   }
 
-  var _createClass = (function() {
+  var _createClass = (function () {
     function defineProperties(target, props) {
       for (var i = 0; i < props.length; i++) {
         var descriptor = props[i];
         descriptor.enumerable = descriptor.enumerable || false;
         descriptor.configurable = true;
-        if ('value' in descriptor) descriptor.writable = true;
+        if ("value" in descriptor) descriptor.writable = true;
         Object.defineProperty(target, descriptor.key, descriptor);
       }
     }
 
-    return function(Constructor, protoProps, staticProps) {
+    return function (Constructor, protoProps, staticProps) {
       if (protoProps) defineProperties(Constructor.prototype, protoProps);
       if (staticProps) defineProperties(Constructor, staticProps);
       return Constructor;
@@ -75,10 +75,10 @@
   })();
 
   var DEFAULTS = {
-    prefixes: ['-webkit-', '-moz-', '-ms-', '-o-'],
+    prefixes: ["-webkit-", "-moz-", "-ms-", "-o-"],
     forceStandard: true,
     angleUseKeyword: true,
-    emptyString: '',
+    emptyString: "",
     degradationFormat: false,
     cleanPosition: true,
     color: {
@@ -91,17 +91,17 @@
         r: 0,
         g: 0,
         b: 0,
-        a: 1
-      }
-    }
+        a: 1,
+      },
+    },
   };
 
   /* eslint no-extend-native: "off" */
   if (!String.prototype.includes) {
-    String.prototype.includes = function(search, start) {
-      'use strict';
+    String.prototype.includes = function (search, start) {
+      "use strict";
 
-      if (typeof start !== 'number') {
+      if (typeof start !== "number") {
         start = 0;
       }
 
@@ -114,15 +114,15 @@
 
   function getPrefix() {
     var ua = window.navigator.userAgent;
-    var prefix = '';
+    var prefix = "";
     if (/MSIE/g.test(ua)) {
-      prefix = '-ms-';
+      prefix = "-ms-";
     } else if (/Firefox/g.test(ua)) {
-      prefix = '-moz-';
+      prefix = "-moz-";
     } else if (/(WebKit)/i.test(ua)) {
-      prefix = '-webkit-';
+      prefix = "-webkit-";
     } else if (/Opera/g.test(ua)) {
-      prefix = '-o-';
+      prefix = "-o-";
     }
     return prefix;
   }
@@ -139,18 +139,18 @@
 
   function reverseDirection(direction) {
     var mapping = {
-      top: 'bottom',
-      right: 'left',
-      bottom: 'top',
-      left: 'right',
-      'right top': 'left bottom',
-      'top right': 'bottom left',
-      'bottom right': 'top left',
-      'right bottom': 'left top',
-      'left bottom': 'right top',
-      'bottom left': 'top right',
-      'top left': 'bottom right',
-      'left top': 'right bottom'
+      top: "bottom",
+      right: "left",
+      bottom: "top",
+      left: "right",
+      "right top": "left bottom",
+      "top right": "bottom left",
+      "bottom right": "top left",
+      "right bottom": "left top",
+      "left bottom": "right top",
+      "bottom left": "top right",
+      "top left": "bottom right",
+      "left top": "right bottom",
     };
     return mapping.hasOwnProperty(direction) ? mapping[direction] : direction;
   }
@@ -161,40 +161,41 @@
   }
 
   var keywordAngleMap = {
-    'to top': 0,
-    'to right': 90,
-    'to bottom': 180,
-    'to left': 270,
-    'to right top': 45,
-    'to top right': 45,
-    'to bottom right': 135,
-    'to right bottom': 135,
-    'to left bottom': 225,
-    'to bottom left': 225,
-    'to top left': 315,
-    'to left top': 315
+    "to top": 0,
+    "to right": 90,
+    "to bottom": 180,
+    "to left": 270,
+    "to right top": 45,
+    "to top right": 45,
+    "to bottom right": 135,
+    "to right bottom": 135,
+    "to left bottom": 225,
+    "to bottom left": 225,
+    "to top left": 315,
+    "to left top": 315,
   };
 
   var angleKeywordMap = flip(keywordAngleMap);
 
-  var RegExpStrings = (function() {
-    var color = /(?:rgba|rgb|hsla|hsl)\s*\([\s\d\.,%]+\)|#[a-z0-9]{3,6}|[a-z]+/i;
+  var RegExpStrings = (function () {
+    var color =
+      /(?:rgba|rgb|hsla|hsl)\s*\([\s\d\.,%]+\)|#[a-z0-9]{3,6}|[a-z]+/i;
     var position = /\d{1,3}%/i;
     var angle = /(?:to ){0,1}(?:(?:top|left|right|bottom)\s*){1,2}|\d+deg/i;
     var stop = new RegExp(
-      '(' + color.source + ')\\s*(' + position.source + '){0,1}',
-      'i'
+      "(" + color.source + ")\\s*(" + position.source + "){0,1}",
+      "i"
     );
-    var stops = new RegExp(stop.source, 'gi');
+    var stops = new RegExp(stop.source, "gi");
     var parameters = new RegExp(
-      '(?:(' + angle.source + ')){0,1}\\s*,{0,1}\\s*(.*?)\\s*',
-      'i'
+      "(?:(" + angle.source + ")){0,1}\\s*,{0,1}\\s*(.*?)\\s*",
+      "i"
     );
     var full = new RegExp(
-      '^(-webkit-|-moz-|-ms-|-o-){0,1}(linear|radial|repeating-linear)-gradient\\s*\\(\\s*(' +
+      "^(-webkit-|-moz-|-ms-|-o-){0,1}(linear|radial|repeating-linear)-gradient\\s*\\(\\s*(" +
         parameters.source +
-        ')\\s*\\)$',
-      'i'
+        ")\\s*\\)$",
+      "i"
     );
 
     return {
@@ -204,7 +205,7 @@
       POSITION: position,
       STOP: stop,
       STOPS: stops,
-      PARAMETERS: new RegExp('^' + parameters.source + '$', 'i')
+      PARAMETERS: new RegExp("^" + parameters.source + "$", "i"),
     };
   })();
 
@@ -229,9 +230,9 @@
         var value = this.parseParameters(matched[3]);
 
         return {
-          prefix: typeof matched[1] === 'undefined' ? null : matched[1],
+          prefix: typeof matched[1] === "undefined" ? null : matched[1],
           type: matched[2],
-          value: value
+          value: value,
         };
       } else {
         return false;
@@ -243,8 +244,8 @@
       if ((matched = RegExpStrings.PARAMETERS.exec(string)) !== null) {
         var stops = this.parseStops(matched[2]);
         return {
-          angle: typeof matched[1] === 'undefined' ? 0 : matched[1],
-          stops: stops
+          angle: typeof matched[1] === "undefined" ? 0 : matched[1],
+          stops: stops,
         };
       } else {
         return false;
@@ -257,7 +258,7 @@
       var matched = void 0;
       var result = [];
       if ((matched = string.match(RegExpStrings.STOPS)) !== null) {
-        _jquery2.default.each(matched, function(i, item) {
+        _jquery2.default.each(matched, function (i, item) {
           var stop = _this.parseStop(item);
           if (stop) {
             result.push(stop);
@@ -278,7 +279,7 @@
 
       for (var i = 0; i < stops.length; i++) {
         stop = stops[i];
-        if (typeof stop.position === 'undefined' || stop.position === null) {
+        if (typeof stop.position === "undefined" || stop.position === null) {
           if (i === 0) {
             position = 0;
           } else if (i === stops.length - 1) {
@@ -293,7 +294,7 @@
         colors.push(stop.color.toString());
       }
 
-      positions = (function(data) {
+      positions = (function (data) {
         var start = null;
         var average = void 0;
         for (var _i = 0; _i < data.length; _i++) {
@@ -320,14 +321,14 @@
           ((x === 0 && positions[x] === 0) ||
             (x === stops.length - 1 && positions[x] === 1))
         ) {
-          position = '';
+          position = "";
         } else {
-          position = ' ' + this.formatPosition(positions[x]);
+          position = " " + this.formatPosition(positions[x]);
         }
 
         output.push(colors[x] + position);
       }
-      return output.join(', ');
+      return output.join(", ");
     },
 
     parseStop: function parseStop(string) {
@@ -337,7 +338,7 @@
 
         return {
           color: matched[1],
-          position: position
+          position: position,
         };
       } else {
         return false;
@@ -345,11 +346,11 @@
     },
 
     parsePosition: function parsePosition(string) {
-      if (typeof string === 'string' && string.substr(-1) === '%') {
+      if (typeof string === "string" && string.substr(-1) === "%") {
         string = parseFloat(string.slice(0, -1) / 100);
       }
 
-      if (typeof string !== 'undefined' && string !== null) {
+      if (typeof string !== "undefined" && string !== null) {
         return parseFloat(string, 10);
       } else {
         return null;
@@ -357,20 +358,20 @@
     },
 
     formatPosition: function formatPosition(value) {
-      return parseInt(value * 100, 10) + '%';
+      return parseInt(value * 100, 10) + "%";
     },
 
     parseAngle: function parseAngle(string, notStandard) {
-      if (typeof string === 'string' && string.includes('deg')) {
-        string = string.replace('deg', '');
+      if (typeof string === "string" && string.includes("deg")) {
+        string = string.replace("deg", "");
       }
       if (!isNaN(string)) {
         if (notStandard) {
           string = this.fixOldAngle(string);
         }
       }
-      if (typeof string === 'string') {
-        var directions = string.split(' ');
+      if (typeof string === "string") {
+        var directions = string.split(" ");
 
         var filtered = [];
         for (var i in directions) {
@@ -378,12 +379,12 @@
             filtered.push(directions[i].toLowerCase());
           }
         }
-        var keyword = filtered.join(' ');
+        var keyword = filtered.join(" ");
 
-        if (!string.includes('to ')) {
+        if (!string.includes("to ")) {
           keyword = reverseDirection(keyword);
         }
-        keyword = 'to ' + keyword;
+        keyword = "to " + keyword;
         if (keywordAngleMap.hasOwnProperty(keyword)) {
           string = keywordAngleMap[keyword];
         }
@@ -420,14 +421,14 @@
         if (notStandard) {
           value = this.fixOldAngle(value);
         }
-        value = value + 'deg';
+        value = value + "deg";
       }
 
       return value;
-    }
+    },
   };
 
-  var ColorStop = (function() {
+  var ColorStop = (function () {
     function ColorStop(color, position, gradient) {
       _classCallCheck(this, ColorStop);
 
@@ -439,27 +440,27 @@
 
     _createClass(ColorStop, [
       {
-        key: 'setPosition',
+        key: "setPosition",
         value: function setPosition(string) {
           var position = GradientString.parsePosition(string);
           if (this.position !== position) {
             this.position = position;
             this.gradient.reorder();
           }
-        }
+        },
       },
       {
-        key: 'setColor',
+        key: "setColor",
         value: function setColor(string) {
           this.color.fromString(string);
-        }
+        },
       },
       {
-        key: 'remove',
+        key: "remove",
         value: function remove() {
           this.gradient.removeById(this.id);
-        }
-      }
+        },
+      },
     ]);
 
     return ColorStop;
@@ -470,18 +471,18 @@
       parse: function parse(result) {
         return {
           r:
-            result[1].substr(-1) === '%'
+            result[1].substr(-1) === "%"
               ? parseInt(result[1].slice(0, -1) * 2.55, 10)
               : parseInt(result[1], 10),
           g:
-            result[2].substr(-1) === '%'
+            result[2].substr(-1) === "%"
               ? parseInt(result[2].slice(0, -1) * 2.55, 10)
               : parseInt(result[2], 10),
           b:
-            result[3].substr(-1) === '%'
+            result[3].substr(-1) === "%"
               ? parseInt(result[3].slice(0, -1) * 2.55, 10)
               : parseInt(result[3], 10),
-          a: 1
+          a: 1,
         };
       },
       to: function to(gradient, instance, prefix) {
@@ -516,35 +517,35 @@
           instance.options.cleanPosition
         );
 
-        var output = 'linear-gradient(' + angle + ', ' + stops + ')';
+        var output = "linear-gradient(" + angle + ", " + stops + ")";
         if (standard) {
           return output;
         } else {
           return _prefix + output;
         }
-      }
-    }
+      },
+    },
   };
 
-  var AsGradient = (function() {
+  var AsGradient = (function () {
     function AsGradient(string, options) {
       _classCallCheck(this, AsGradient);
 
       if (
-        (typeof string === 'undefined' ? 'undefined' : _typeof(string)) ===
-          'object' &&
-        typeof options === 'undefined'
+        (typeof string === "undefined" ? "undefined" : _typeof(string)) ===
+          "object" &&
+        typeof options === "undefined"
       ) {
         options = string;
         string = undefined;
       }
       this.value = {
         angle: 0,
-        stops: []
+        stops: [],
       };
       this.options = _jquery2.default.extend(true, {}, DEFAULTS, options);
 
-      this._type = 'LINEAR';
+      this._type = "LINEAR";
       this._prefix = null;
       this.length = this.value.stops.length;
       this.current = 0;
@@ -557,57 +558,57 @@
       AsGradient,
       [
         {
-          key: 'init',
+          key: "init",
           value: function init(string) {
             if (string) {
               this.fromString(string);
             }
-          }
+          },
         },
         {
-          key: 'val',
+          key: "val",
           value: function val(value) {
-            if (typeof value === 'undefined') {
+            if (typeof value === "undefined") {
               return this.toString();
             } else {
               this.fromString(value);
               return this;
             }
-          }
+          },
         },
         {
-          key: 'angle',
+          key: "angle",
           value: function angle(value) {
-            if (typeof value === 'undefined') {
+            if (typeof value === "undefined") {
               return this.value.angle;
             } else {
               this.value.angle = GradientString.parseAngle(value);
               return this;
             }
-          }
+          },
         },
         {
-          key: 'append',
+          key: "append",
           value: function append(color, position) {
             return this.insert(color, position, this.length);
-          }
+          },
         },
         {
-          key: 'reorder',
+          key: "reorder",
           value: function reorder() {
             if (this.length < 2) {
               return;
             }
 
-            this.value.stops = this.value.stops.sort(function(a, b) {
+            this.value.stops = this.value.stops.sort(function (a, b) {
               return a.position - b.position;
             });
-          }
+          },
         },
         {
-          key: 'insert',
+          key: "insert",
           value: function insert(color, position, index) {
-            if (typeof index === 'undefined') {
+            if (typeof index === "undefined") {
               index = this.current;
             }
 
@@ -618,10 +619,10 @@
             this.length = this.length + 1;
             this.current = index;
             return stop;
-          }
+          },
         },
         {
-          key: 'getById',
+          key: "getById",
           value: function getById(id) {
             if (this.length > 0) {
               for (var i in this.value.stops) {
@@ -631,19 +632,19 @@
               }
             }
             return false;
-          }
+          },
         },
         {
-          key: 'removeById',
+          key: "removeById",
           value: function removeById(id) {
             var index = this.getIndexById(id);
             if (index) {
               this.remove(index);
             }
-          }
+          },
         },
         {
-          key: 'getIndexById',
+          key: "getIndexById",
           value: function getIndexById(id) {
             var index = 0;
             for (var i in this.value.stops) {
@@ -653,16 +654,16 @@
               index++;
             }
             return false;
-          }
+          },
         },
         {
-          key: 'getCurrent',
+          key: "getCurrent",
           value: function getCurrent() {
             return this.value.stops[this.current];
-          }
+          },
         },
         {
-          key: 'setCurrentById',
+          key: "setCurrentById",
           value: function setCurrentById(id) {
             var index = 0;
             for (var i in this.value.stops) {
@@ -672,12 +673,12 @@
                 this.current = index;
               }
             }
-          }
+          },
         },
         {
-          key: 'get',
+          key: "get",
           value: function get(index) {
-            if (typeof index === 'undefined') {
+            if (typeof index === "undefined") {
               index = this.current;
             }
             if (index >= 0 && index < this.length) {
@@ -686,12 +687,12 @@
             } else {
               return false;
             }
-          }
+          },
         },
         {
-          key: 'remove',
+          key: "remove",
           value: function remove(index) {
-            if (typeof index === 'undefined') {
+            if (typeof index === "undefined") {
               index = this.current;
             }
             if (index >= 0 && index < this.length) {
@@ -699,42 +700,42 @@
               this.length = this.length - 1;
               this.current = index - 1;
             }
-          }
+          },
         },
         {
-          key: 'empty',
+          key: "empty",
           value: function empty() {
             this.value.stops = [];
             this.length = 0;
             this.current = 0;
-          }
+          },
         },
         {
-          key: 'reset',
+          key: "reset",
           value: function reset() {
             this.value._angle = 0;
             this.empty();
             this._prefix = null;
-            this._type = 'LINEAR';
-          }
+            this._type = "LINEAR";
+          },
         },
         {
-          key: 'type',
+          key: "type",
           value: function type(_type) {
             if (
-              typeof _type === 'string' &&
+              typeof _type === "string" &&
               (_type = _type.toUpperCase()) &&
-              typeof GradientTypes[_type] !== 'undefined'
+              typeof GradientTypes[_type] !== "undefined"
             ) {
               this._type = _type;
               return this;
             } else {
               return this._type;
             }
-          }
+          },
         },
         {
-          key: 'fromString',
+          key: "fromString",
           value: function fromString(string) {
             var _this2 = this;
 
@@ -751,30 +752,30 @@
                   this._prefix !== null
                 );
 
-                _jquery2.default.each(result.value.stops, function(i, stop) {
+                _jquery2.default.each(result.value.stops, function (i, stop) {
                   _this2.append(stop.color, stop.position);
                 });
               }
             }
-          }
+          },
         },
         {
-          key: 'toString',
+          key: "toString",
           value: function toString(prefix) {
             if (prefix === true) {
               prefix = getPrefix();
             }
             return GradientTypes[this.type()].to(this.value, this, prefix);
-          }
+          },
         },
         {
-          key: 'matchString',
+          key: "matchString",
           value: function matchString(string) {
             return GradientString.matchString(string);
-          }
+          },
         },
         {
-          key: 'toStringWithAngle',
+          key: "toStringWithAngle",
           value: function toStringWithAngle(angle, prefix) {
             var value = _jquery2.default.extend(true, {}, this.value);
             value.angle = GradientString.parseAngle(angle);
@@ -784,10 +785,10 @@
             }
 
             return GradientTypes[this.type()].to(value, this, prefix);
-          }
+          },
         },
         {
-          key: 'getPrefixedStrings',
+          key: "getPrefixedStrings",
           value: function getPrefixedStrings() {
             var strings = [];
             for (var i in this.options.prefixes) {
@@ -796,20 +797,20 @@
               }
             }
             return strings;
-          }
-        }
+          },
+        },
       ],
       [
         {
-          key: 'setDefaults',
+          key: "setDefaults",
           value: function setDefaults(options) {
             _jquery2.default.extend(
               true,
               DEFAULTS,
               _jquery2.default.isPlainObject(options) && options
             );
-          }
-        }
+          },
+        },
       ]
     );
 
@@ -817,7 +818,7 @@
   })();
 
   var info = {
-    version: '0.3.3'
+    version: "0.3.3",
   };
 
   var OtherAsGradient = _jquery2.default.asGradient;
@@ -847,7 +848,7 @@
       noConflict: function noConflict() {
         _jquery2.default.asGradient = OtherAsGradient;
         return jQueryAsGradient;
-      }
+      },
     },
     GradientString,
     info

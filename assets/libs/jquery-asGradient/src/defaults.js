@@ -1,8 +1,8 @@
 export default {
-  prefixes: ['-webkit-', '-moz-', '-ms-', '-o-'],
+  prefixes: ["-webkit-", "-moz-", "-ms-", "-o-"],
   forceStandard: true,
   angleUseKeyword: true,
-  emptyString: '',
+  emptyString: "",
   degradationFormat: false,
   cleanPosition: true,
   color: {
@@ -15,7 +15,7 @@ export default {
       r: 0,
       g: 0,
       b: 0,
-      a: 1
-    }
-  }
+      a: 1,
+    },
+  },
 };

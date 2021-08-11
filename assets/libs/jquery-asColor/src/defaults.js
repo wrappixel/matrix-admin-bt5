@@ -3,13 +3,14 @@ export default {
   shortenHex: false,
   hexUseName: false,
   reduceAlpha: false,
-  alphaConvert: { // or false will disable convert
-    'RGB': 'RGBA',
-    'HSL': 'HSLA',
-    'HEX': 'RGBA',
-    'NAMESPACE': 'RGBA',
+  alphaConvert: {
+    // or false will disable convert
+    RGB: "RGBA",
+    HSL: "HSLA",
+    HEX: "RGBA",
+    NAMESPACE: "RGBA",
   },
-  nameDegradation: 'HEX',
-  invalidValue: '',
-  zeroAlphaAsTransparent: true
+  nameDegradation: "HEX",
+  invalidValue: "",
+  zeroAlphaAsTransparent: true,
 };

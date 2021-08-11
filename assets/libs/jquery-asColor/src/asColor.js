@@ -1,13 +1,13 @@
-import $ from 'jquery';
-import DEFAULTS from './defaults';
-import ColorStrings from './colorStrings';
-import Converter from './converter';
+import $ from "jquery";
+import DEFAULTS from "./defaults";
+import ColorStrings from "./colorStrings";
+import Converter from "./converter";
 
 /* eslint no-extend-native: "off" */
 if (!String.prototype.includes) {
-  String.prototype.includes = function(search, start) {
-    'use strict';
-    if (typeof start !== 'number') {
+  String.prototype.includes = function (search, start) {
+    "use strict";
+    if (typeof start !== "number") {
       start = 0;
     }
 
@@ -20,13 +20,13 @@ if (!String.prototype.includes) {
 
 class AsColor {
   constructor(string, options) {
-    if (typeof string === 'object' && typeof options === 'undefined') {
+    if (typeof string === "object" && typeof options === "undefined") {
       options = string;
       string = undefined;
     }
-    if(typeof options === 'string'){
+    if (typeof options === "string") {
       options = {
-        format: options
+        format: options,
       };
     }
     this.options = $.extend(true, {}, DEFAULTS, options);
@@ -37,10 +37,10 @@ class AsColor {
       h: 0,
       s: 0,
       v: 0,
-      a: 1
+      a: 1,
     };
     this._format = false;
-    this._matchFormat = 'HEX';
+    this._matchFormat = "HEX";
     this._valid = true;
 
     this.init(string);
@@ -57,7 +57,7 @@ class AsColor {
   }
 
   val(value) {
-    if (typeof value === 'undefined') {
+    if (typeof value === "undefined") {
       return this.toString();
     }
     this.fromString(value);
@@ -65,7 +65,7 @@ class AsColor {
   }
 
   alpha(value) {
-    if (typeof value === 'undefined' || isNaN(value)) {
+    if (typeof value === "undefined" || isNaN(value)) {
       return this.value.a;
     }
 
@@ -85,7 +85,7 @@ class AsColor {
   }
 
   fromString(string, updateFormat) {
-    if (typeof string === 'string') {
+    if (typeof string === "string") {
       string = $.trim(string);
       let matched = null;
       let rgb;
@@ -96,8 +96,8 @@ class AsColor {
 
           if (rgb) {
             this.set(rgb);
-            if(i === 'TRANSPARENT'){
-              i = 'HEX';
+            if (i === "TRANSPARENT") {
+              i = "HEX";
             }
             this._matchFormat = i;
             if (updateFormat === true) {
@@ -107,23 +107,27 @@ class AsColor {
           }
         }
       }
-    } else if (typeof string === 'object') {
+    } else if (typeof string === "object") {
       this.set(string);
     }
     return this;
   }
 
   format(format) {
-    if (typeof format === 'string' && (format = format.toUpperCase()) && typeof ColorStrings[format] !== 'undefined') {
-      if (format !== 'TRANSPARENT') {
+    if (
+      typeof format === "string" &&
+      (format = format.toUpperCase()) &&
+      typeof ColorStrings[format] !== "undefined"
+    ) {
+      if (format !== "TRANSPARENT") {
         this._format = format;
       } else {
-        this._format = 'HEX';
+        this._format = "HEX";
       }
-    } else if(format === false) {
+    } else if (format === false) {
       this._format = false;
     }
-    if(this._format === false){
+    if (this._format === false) {
       return this._matchFormat;
     }
     return this._format;
@@ -154,7 +158,11 @@ class AsColor {
   }
 
   to(format) {
-    if (typeof format === 'string' && (format = format.toUpperCase()) && typeof ColorStrings[format] !== 'undefined') {
+    if (
+      typeof format === "string" &&
+      (format = format.toUpperCase()) &&
+      typeof ColorStrings[format] !== "undefined"
+    ) {
       return ColorStrings[format].to(this.value, this);
     }
     return this.toString();
@@ -165,7 +173,7 @@ class AsColor {
     if (!this._valid) {
       value = this.options.invalidValue;
 
-      if (typeof value === 'string') {
+      if (typeof value === "string") {
         return value;
       }
     }
@@ -175,7 +183,7 @@ class AsColor {
     }
 
     let format;
-    if(this._format === false){
+    if (this._format === false) {
       format = this._matchFormat;
     } else {
       format = this._format;
@@ -183,22 +191,27 @@ class AsColor {
 
     if (this.options.reduceAlpha && value.a === 1) {
       switch (format) {
-        case 'RGBA':
-          format = 'RGB';
+        case "RGBA":
+          format = "RGB";
           break;
-        case 'HSLA':
-          format = 'HSL';
+        case "HSLA":
+          format = "HSL";
           break;
         default:
           break;
       }
     }
 
-    if (value.a !== 1 && format!=='RGBA' && format !=='HSLA' && this.options.alphaConvert){
-      if(typeof this.options.alphaConvert === 'string'){
+    if (
+      value.a !== 1 &&
+      format !== "RGBA" &&
+      format !== "HSLA" &&
+      this.options.alphaConvert
+    ) {
+      if (typeof this.options.alphaConvert === "string") {
         format = this.options.alphaConvert;
       }
-      if(typeof this.options.alphaConvert[format] !== 'undefined'){
+      if (typeof this.options.alphaConvert[format] !== "undefined") {
         format = this.options.alphaConvert[format];
       }
     }
@@ -217,13 +230,13 @@ class AsColor {
     let rgb;
 
     for (const i in color) {
-      if ('hsv'.includes(i)) {
+      if ("hsv".includes(i)) {
         fromHsv++;
         this.value[i] = color[i];
-      } else if ('rgb'.includes(i)) {
+      } else if ("rgb".includes(i)) {
         fromRgb++;
         this.value[i] = color[i];
-      } else if (i === 'a') {
+      } else if (i === "a") {
         this.value.a = color.a;
       }
     }
@@ -247,7 +260,7 @@ class AsColor {
   }
 
   static matchString(string) {
-    if (typeof string === 'string') {
+    if (typeof string === "string") {
       string = $.trim(string);
       let matched = null;
       let rgb;
@@ -268,6 +281,5 @@ class AsColor {
     $.extend(true, DEFAULTS, $.isPlainObject(options) && options);
   }
 }
-
 
 export default AsColor;

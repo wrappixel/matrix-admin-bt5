@@ -25,7 +25,10 @@
   > :not(caption) > * > * {
     padding: $table-cell-padding-y $table-cell-padding-x;
     background-color: var(--#{$variable-prefix}table-bg);
-    background-image: linear-gradient(var(--#{$variable-prefix}table-accent-bg), var(--#{$variable-prefix}table-accent-bg));
+    background-image: linear-gradient(
+      var(--#{$variable-prefix}table-accent-bg),
+      var(--#{$variable-prefix}table-accent-bg)
+    );
     border-bottom-width: $table-border-width;
   }
 
@@ -43,7 +46,6 @@
   }
 }
 
-
 //
 // Change placement of captions with a class
 //
@@ -51,7 +53,6 @@
 .caption-top {
   caption-side: top;
 }
-
 
 //
 // Condensed table w/ half padding
@@ -63,7 +64,6 @@
     padding: $table-cell-padding-y-sm $table-cell-padding-x-sm;
   }
 }
-
 
 // Border versions
 //
@@ -98,7 +98,9 @@
 
 .table-striped {
   > tbody > tr:nth-of-type(#{$table-striped-order}) {
-    --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-striped-bg);
+    --#{$variable-prefix}table-accent-bg: var(
+      --#{$variable-prefix}table-striped-bg
+    );
     color: var(--#{$variable-prefix}table-striped-color);
   }
 }
@@ -108,7 +110,9 @@
 // The `.table-active` class can be added to highlight rows or cells
 
 .table-active {
-  --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-active-bg);
+  --#{$variable-prefix}table-accent-bg: var(
+    --#{$variable-prefix}table-active-bg
+  );
   color: var(--#{$variable-prefix}table-active-color);
 }
 
@@ -118,11 +122,12 @@
 
 .table-hover {
   > tbody > tr:hover {
-    --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-hover-bg);
+    --#{$variable-prefix}table-accent-bg: var(
+      --#{$variable-prefix}table-hover-bg
+    );
     color: var(--#{$variable-prefix}table-hover-color);
   }
 }
-
 
 // Table variants
 //

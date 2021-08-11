@@ -1,23 +1,23 @@
-import $ from 'jquery';
-import DEFAULTS from './defaults';
-import * as util from './util';
-import GradientString from './gradientString';
-import ColorStop from './colorStop';
-import GradientTypes from './gradientTypes';
+import $ from "jquery";
+import DEFAULTS from "./defaults";
+import * as util from "./util";
+import GradientString from "./gradientString";
+import ColorStop from "./colorStop";
+import GradientTypes from "./gradientTypes";
 
 class AsGradient {
   constructor(string, options) {
-    if (typeof string === 'object' && typeof options === 'undefined') {
+    if (typeof string === "object" && typeof options === "undefined") {
       options = string;
       string = undefined;
     }
     this.value = {
       angle: 0,
-      stops: []
+      stops: [],
     };
     this.options = $.extend(true, {}, DEFAULTS, options);
 
-    this._type = 'LINEAR';
+    this._type = "LINEAR";
     this._prefix = null;
     this.length = this.value.stops.length;
     this.current = 0;
@@ -33,7 +33,7 @@ class AsGradient {
   }
 
   val(value) {
-    if (typeof value === 'undefined') {
+    if (typeof value === "undefined") {
       return this.toString();
     } else {
       this.fromString(value);
@@ -42,7 +42,7 @@ class AsGradient {
   }
 
   angle(value) {
-    if (typeof value === 'undefined') {
+    if (typeof value === "undefined") {
       return this.value.angle;
     } else {
       this.value.angle = GradientString.parseAngle(value);
@@ -55,7 +55,7 @@ class AsGradient {
   }
 
   reorder() {
-    if(this.length < 2){
+    if (this.length < 2) {
       return;
     }
 
@@ -63,7 +63,7 @@ class AsGradient {
   }
 
   insert(color, position, index) {
-    if (typeof index === 'undefined') {
+    if (typeof index === "undefined") {
       index = this.current;
     }
 
@@ -77,9 +77,9 @@ class AsGradient {
   }
 
   getById(id) {
-    if(this.length > 0){
-      for(const i in this.value.stops){
-        if(id === this.value.stops[i].id){
+    if (this.length > 0) {
+      for (const i in this.value.stops) {
+        if (id === this.value.stops[i].id) {
           return this.value.stops[i];
         }
       }
@@ -89,18 +89,18 @@ class AsGradient {
 
   removeById(id) {
     const index = this.getIndexById(id);
-    if(index){
+    if (index) {
       this.remove(index);
     }
   }
 
   getIndexById(id) {
     let index = 0;
-    for(const i in this.value.stops){
-      if(id === this.value.stops[i].id){
+    for (const i in this.value.stops) {
+      if (id === this.value.stops[i].id) {
         return index;
       }
-      index ++;
+      index++;
     }
     return false;
   }
@@ -111,9 +111,9 @@ class AsGradient {
 
   setCurrentById(id) {
     let index = 0;
-    for(const i in this.value.stops){
-      if(this.value.stops[i].id !== id){
-        index ++;
+    for (const i in this.value.stops) {
+      if (this.value.stops[i].id !== id) {
+        index++;
       } else {
         this.current = index;
       }
@@ -121,7 +121,7 @@ class AsGradient {
   }
 
   get(index) {
-    if (typeof index === 'undefined') {
+    if (typeof index === "undefined") {
       index = this.current;
     }
     if (index >= 0 && index < this.length) {
@@ -133,7 +133,7 @@ class AsGradient {
   }
 
   remove(index) {
-    if (typeof index === 'undefined') {
+    if (typeof index === "undefined") {
       index = this.current;
     }
     if (index >= 0 && index < this.length) {
@@ -153,11 +153,15 @@ class AsGradient {
     this.value._angle = 0;
     this.empty();
     this._prefix = null;
-    this._type = 'LINEAR';
+    this._type = "LINEAR";
   }
 
   type(type) {
-    if (typeof type === 'string' && (type = type.toUpperCase()) && typeof GradientTypes[type] !== 'undefined') {
+    if (
+      typeof type === "string" &&
+      (type = type.toUpperCase()) &&
+      typeof GradientTypes[type] !== "undefined"
+    ) {
       this._type = type;
       return this;
     } else {
@@ -174,7 +178,10 @@ class AsGradient {
       this._prefix = result.prefix;
       this.type(result.type);
       if (result.value) {
-        this.value.angle = GradientString.parseAngle(result.value.angle, this._prefix !== null);
+        this.value.angle = GradientString.parseAngle(
+          result.value.angle,
+          this._prefix !== null
+        );
 
         $.each(result.value.stops, (i, stop) => {
           this.append(stop.color, stop.position);
@@ -184,7 +191,7 @@ class AsGradient {
   }
 
   toString(prefix) {
-    if(prefix === true){
+    if (prefix === true) {
       prefix = util.getPrefix();
     }
     return GradientTypes[this.type()].to(this.value, this, prefix);
@@ -198,7 +205,7 @@ class AsGradient {
     const value = $.extend(true, {}, this.value);
     value.angle = GradientString.parseAngle(angle);
 
-    if(prefix === true){
+    if (prefix === true) {
       prefix = util.getPrefix();
     }
 
@@ -208,7 +215,7 @@ class AsGradient {
   getPrefixedStrings() {
     const strings = [];
     for (let i in this.options.prefixes) {
-      if(Object.hasOwnProperty.call(this.options.prefixes, i)){
+      if (Object.hasOwnProperty.call(this.options.prefixes, i)) {
         strings.push(this.toString(this.options.prefixes[i]));
       }
     }
