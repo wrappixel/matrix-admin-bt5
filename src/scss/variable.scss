@@ -283,6 +283,14 @@ $grid-breakpoints: (
   xl: 1600px,
 ) !default;
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1150px,
+) !default;
+
 //Navbar
 $navbar-dark-color: rgba($white, 0.8) !default;
 $navbar-dark-hover-color: rgba($white, 1) !default;
