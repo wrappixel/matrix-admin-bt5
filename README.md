@@ -2,7 +2,7 @@
 
 <ul>
   <li>  
-    <h4><a href="https://wrappixel.com/demos/free-admin-templates/matrix-admin-bt4/html/ltr/index.html">Demo Link</a></h4>
+    <h4><a href="https://matrixadmin.wrappixel.com/">Demo Link</a></h4>
   </li>
   <li>
     <h4><a href="http://matrixadmin.wrappixel.com/matrix-admin-package-full.zip">Download Link</a></h4>
