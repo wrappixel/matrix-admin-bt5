@@ -173,9 +173,9 @@
 <!-- Useful Links of Template -->
 <h2>Useful Links</h2>
 <ul>
-<li><a href="https://www.wrappixel.com/templates/category/admin-template/">Admin Panel Template</a> from WrapPixel</li>
-<li><a href="https://www.wrappixel.com/">Free Bootstrap 5 Themes</a> from WrapPixel</li>
-<li><a href="https://www.wrappixel.com/templates/category/bootstrap-admin-templates/">Bootstrap 5 Admin Template</a> from WrapPixel</li>
+<li><a href="https://www.wrappixel.com/templates/category/admin-dashboard-templates/">Admin Panel Template</a> from WrapPixel</li>
+<li><a href="https://www.wrappixel.com/templates/category/bootstrap-templates/">Bootstrap 5 Themes</a> from WrapPixel</li>
+<li><a href="https://www.wrappixel.com/templates/category/bootstrap-admin-dashboard-template/">Bootstrap 5 Admin Templates</a> from WrapPixel</li>
 <li><a href="https://www.wrappixel.com/templates/category/angular-templates/">Angular JS Dashboard</a> from WrapPixel</li>
 <li><a href="https://www.wrappixel.com/templates/category/react-templates/">React Website Templates</a> from WrapPixel</li>
 <li><a href="https://www.wrappixel.com/templates/category/vuejs-templates/">Vue JS Templates</a> from WrapPixel</li>
